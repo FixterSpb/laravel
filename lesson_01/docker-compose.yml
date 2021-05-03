@@ -29,7 +29,7 @@ services:
     container_name: example-nginx
     working_dir: /application
     volumes:
-      - ../:/application
+      - ../../:/application
       - ./phpdocker/nginx:/etc/nginx/conf.d
     ports:
       - "80:80"
@@ -43,7 +43,7 @@ services:
     container_name: example-php-fpm
     working_dir: /application
     volumes:
-      - ../:/application
+      - ../../:/application
       - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini
     ports:
       - "9000"
