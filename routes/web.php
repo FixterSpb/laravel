@@ -27,3 +27,7 @@ Route::get('/news/{news}', [NewsController::class, 'show'])->name('news.show');
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
 
+Route::get('/auth', function() {
+    return view('auth.index');
+})->name('auth.index');
+

@@ -55,3 +55,22 @@ footer{
 footer>h4{
     text-align: center;
 }
+
+.empty{
+
+    width: 100%;
+    height: 100vh;
+}
+
+.auth{
+    background-color: #d7ccc8;
+    margin: 100px auto;
+    padding: 10px;
+    width: 200px;
+
+}
+
+.auth>h3{
+    text-align: center;
+    margin: 5px 0;
+}
