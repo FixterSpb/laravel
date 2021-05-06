@@ -3,6 +3,6 @@
         <li><a class="p-6" href="{{ route('index.index') }}">Главная</a></li>
         <li><a class="p-6" href="{{ route('categories.index') }}">Категории</a></li>
         <li><a class="p-6" href="{{ route('about.index') }}">О проекте</a></li>
-        <li><a class="p-6" href="{{ route('auth.index') }}">Войти</a></li>
+        <li><a class="p-6" href="{{ route('login') }}">Войти</a></li>
     </ul>
 </header>
