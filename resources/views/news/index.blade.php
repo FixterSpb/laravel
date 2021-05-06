@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Категории новостей')
+@section('title', 'Все новости')
 
 @section('content')
     <h1>Все новости</h1>
