@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,18 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [IndexController::class, 'index'])->name('index.index');
 
-Route::get('/about', function() {
-    return view('about');
-});
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 
-Route::get('/news-list', function() {
-    return view('news-list');
-});
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+Route::get('/news/{news}', [NewsController::class, 'show'])->name('news.show');
 
-Route::get("/news/{id} ", function ($id) {
-   return view('news', ['id' => $id]);
-});
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+

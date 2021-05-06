@@ -1,25 +1,14 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel. Lesson 1</title>
-
-    <!-- Fonts -->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset("css/app.css") }}">
     <style>
         /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-        html {
-            line-height: 1.15;
-            -webkit-text-size-adjust: 100%
-        }
-
-        body {
-            margin: 0
-        }
 
         a {
             background-color: transparent
@@ -392,19 +381,26 @@
             font-family: 'Nunito', sans-serif;
         }
     </style>
+    <title>Laravel - @yield('title')</title>
 </head>
-<body class="antialiased">
-<header>
-    <ul style="list-style-type: none" class="flex justify-center">
-        <li><a class="p-6" href="{{ url('/') }}">Главная</a></li>
-        <li><a class="p-6" href="{{ url('/about') }}">О проекте</a></li>
-        <li><a class="p-6" href="{{ url('/news-list') }}">Новости</a></li>
+<body>
 
-    </ul>
-</header>
+<div class="wrapper">
+    @include('layouts.header')
 
-<div class="content px-6">
-    <h1 class="text-center">Новость № {{ $id }}</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet, at beatae blanditiis ea eaque eligendi expedita explicabo hic in ipsum itaque labore laboriosam magnam maiores modi molestias natus nesciunt non numquam pariatur quidem quis quod repudiandae rerum saepe suscipit tenetur ut veritatis voluptatem! Animi blanditiis eveniet in magnam minima repellendus sequi unde. Ab commodi distinctio earum laborum molestias nam nesciunt odio officiis placeat possimus quas quisquam, recusandae sint. Adipisci dolores impedit iure natus nemo quas quisquam, sit voluptatibus? Ab amet consequatur cumque cupiditate deleniti distinctio dolorem eaque, eos error est, et eum, exercitationem illum itaque iure laborum magnam magni molestiae natus necessitatibus nobis obcaecati perspiciatis provident quae quis quo ratione sequi tenetur totam veritatis. Aperiam consequuntur corporis deserunt doloremque libero, omnis possimus praesentium, quae quam qui quod, tempore voluptates voluptatibus! Assumenda consequatur dolorum excepturi, optio provident sed sunt! Accusamus accusantium aperiam asperiores corporis delectus dignissimos dolor dolorem ea eius enim et expedita hic, ipsam itaque iusto laborum maiores neque nesciunt officia officiis pariatur praesentium quaerat quam recusandae rem sapiente sit voluptas! Beatae corporis culpa optio quisquam quos reiciendis, sint soluta? Amet aut earum nemo. A aliquid asperiores deserunt dignissimos doloremque, eius et obcaecati odit optio possimus quas repellat sequi! </p>
+
+        @include('layouts.sidebar')
+
+        <div class="container">
+
+            @yield('content')
+
+        </div>
+
+
+    @include('layouts.footer')
 </div>
+
+
 </body>
+</html>
