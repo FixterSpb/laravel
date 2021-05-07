@@ -10,7 +10,7 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $news = News::all();
+        $news = News::with('category')->get();
         return view('news.index', compact('news'));
     }
 
@@ -22,7 +22,7 @@ class NewsController extends Controller
 
     public function create()
     {
-        $categories = Category::all();
+        $categories = Category::with('category')->get();
         return view('news.create', compact('categories'));
     }
 }
