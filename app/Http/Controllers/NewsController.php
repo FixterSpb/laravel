@@ -22,7 +22,12 @@ class NewsController extends Controller
 
     public function create()
     {
-        $categories = Category::with('category')->get();
+        $categories = Category::all();
         return view('news.create', compact('categories'));
+    }
+
+    public function store(Request $request)
+    {
+        return redirect()->route('news.index');
     }
 }

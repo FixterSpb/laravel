@@ -1,25 +1,26 @@
-@extends('layouts.master')
+<x-app-layout>
+    <x-slot name="title">
+        {{ __('Laravel - Добавление новости') }}
+    </x-slot>
+    <x-slot name="header">
+        <x-text.title-h1>
+            {{ __('Новости') }}
+        </x-text.title-h1>
+    </x-slot>
 
-@section('title', 'Создание новости')
-
-@section('content')
-    <h1>Добавление новости</h1>
-    <form action="#" class="flex flex-column">
-        <label for="category">Выберите категорию новости</label>
-        <br />
-        <select name="category" id="category" name="category">
-            @foreach($categories as $category)
-                <option value="{{ $category->id }}">{{ $category->title }}</option>
-            @endforeach
-        </select>
-        <br />
-        <label for="title">Заголовок</label>
-        <br />
-        <input type="text" placeholder="Заголовок" name="title" class="border-b">
-        <br />
-        <label for="description">Содержание</label>
-        <br />
-        <textarea name='description' placeholder="Введите содержание новости" rows="10"></textarea>
-        <input type="submit" value="Добавить">
-    </form>
-@endsection
+    <x-content-body>
+        <x-text.title-h2>
+            Добавление новости
+        </x-text.title-h2>
+        <x-news.news-create :categories="$categories" />
+{{--        <div class="flex flex-wrap justify-around">--}}
+{{--            @forelse($news as $newsItem)--}}
+{{--                <div class="w-full md:w-1/2 lg:w-1/3 px-3 mt-6">--}}
+{{--                    <x-news.news-preview :news="$newsItem" :categoryIsVisible="true"/>--}}
+{{--                </div>--}}
+{{--            @empty--}}
+{{--                <p class="text-center italic">Новостей пока нет</p>--}}
+{{--            @endforelse--}}
+{{--        </div>--}}
+    </x-content-body>
+</x-app-layout>

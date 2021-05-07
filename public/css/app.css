@@ -11779,6 +11779,10 @@ select {
   line-height: 2.5rem;
 }
 
+.leading-12 {
+  line-height: 3rem;
+}
+
 .leading-none {
   line-height: 1;
 }
@@ -43120,6 +43124,10 @@ select {
     line-height: 2.5rem;
   }
 
+  .sm\:leading-12 {
+    line-height: 3rem;
+  }
+
   .sm\:leading-none {
     line-height: 1;
   }
@@ -74289,6 +74297,10 @@ select {
 
   .md\:leading-10 {
     line-height: 2.5rem;
+  }
+
+  .md\:leading-12 {
+    line-height: 3rem;
   }
 
   .md\:leading-none {
@@ -105462,6 +105474,10 @@ select {
     line-height: 2.5rem;
   }
 
+  .lg\:leading-12 {
+    line-height: 3rem;
+  }
+
   .lg\:leading-none {
     line-height: 1;
   }
@@ -136633,6 +136649,10 @@ select {
     line-height: 2.5rem;
   }
 
+  .xl\:leading-12 {
+    line-height: 3rem;
+  }
+
   .xl\:leading-none {
     line-height: 1;
   }
@@ -167802,6 +167822,10 @@ select {
 
   .\32xl\:leading-10 {
     line-height: 2.5rem;
+  }
+
+  .\32xl\:leading-12 {
+    line-height: 3rem;
   }
 
   .\32xl\:leading-none {

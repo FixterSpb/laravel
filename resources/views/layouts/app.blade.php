@@ -28,10 +28,15 @@
                 </div>
             </header>
 
+            <!-- Floating buttons -->
+            <x-floating-bar />
+
             <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
+
+
         </div>
     </body>
 </html>

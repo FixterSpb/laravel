@@ -12,13 +12,18 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            lineHeight: {
+                '12': '3rem',
+            },
         },
     },
 
     variants: {
         extend: {
             opacity: ['disabled'],
+
         },
+
     },
 
     plugins: [require('@tailwindcss/forms')],
