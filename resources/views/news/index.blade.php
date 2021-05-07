@@ -1,4 +1,7 @@
 <x-app-layout>
+    <x-slot name="title">
+        {{ __('Laravel - Новости') }}
+    </x-slot>
     <x-slot name="header">
         <x-text.title-h1>
             {{ __('Новости') }}

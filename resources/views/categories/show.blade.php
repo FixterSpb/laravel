@@ -1,4 +1,7 @@
 <x-app-layout>
+    <x-slot name="title">
+        {{ __('Laravel - ' . $category->title ) }}
+    </x-slot>
     <x-slot name="header">
         <x-text.title-h1 class="uppercase">
             {{ __('Категории') }}

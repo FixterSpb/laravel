@@ -1,11 +1,21 @@
-@extends('layouts.master')
+<x-app-layout>
+    <x-slot name="title">
+        {{ __('Laravel - ' . $news->title ) }}
+    </x-slot>
 
-@section('title', 'Категории новостей')
+    <x-slot name="header">
+        <x-text.title-h1>
+            {{ __('Новости') }}
+        </x-text.title-h1>
+    </x-slot>
 
-@section('content')
-
-    <h1>{{ $news->title }}</h1>
-    <h3>Категория: {{ $category->title }}</h3>
-    <p>{{ $news->description }}</p>
-
-@endsection
+    <x-content-body>
+        <x-text.title-h2>
+            {{ $news->title }}
+        </x-text.title-h2>
+        <div class="">
+            <p>{{ $news->description }}</p>
+            <small> {{ $news->created_at->format("d.m.Y") }} </small>
+        </div>
+    </x-content-body>
+</x-app-layout>
