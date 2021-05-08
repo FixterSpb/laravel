@@ -18,7 +18,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+        <div class="relative min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
@@ -29,14 +29,15 @@
             </header>
 
             <!-- Floating buttons -->
-            <x-floating-bar />
+            @include('layouts.floating-bar')
 
             <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
 
-
+            <!-- Footer -->
+            @include('layouts.footer');
         </div>
     </body>
 </html>
