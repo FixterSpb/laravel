@@ -1,3 +1,4 @@
+
 <x-app-layout>
     <x-slot name="title">
         {{ __('Laravel - О проекте') }}
@@ -26,4 +27,14 @@
         <x-forms.about-comment />
     </x-content-body>
 
+    <x-content-body>
+        <x-text.title-h2>
+            Комментарии
+        </x-text.title-h2>
+            @forelse($comments as $comment)
+                <x-comment :comment="$comment" />
+            @empty
+                <p class="text-center italic">Комментариев пока нет</p>
+            @endforelse
+    </x-content-body>
 </x-app-layout>
