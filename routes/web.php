@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutCommentController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -26,5 +27,7 @@ Route::get('/categories/create', [CategoryController::class, 'create'])->name('c
 Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
 
 Route::post('/about-comment/create', [AboutCommentController::class, 'store'])->name('about-comment.store');
+
+Route::post('/order/create', [OrderController::class, 'store'])->name('order.store');
 
 require __DIR__.'/auth.php';
