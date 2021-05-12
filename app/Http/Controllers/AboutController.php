@@ -7,14 +7,11 @@ use Illuminate\Support\Facades\Storage;
 
 class AboutController extends Controller
 {
-
-    private const FILE_ABOUT_COMMENT_NAME = 'about-comments.txt';
-
     public function index()
     {
         $comments = [];
-        if (Storage::exists(self::FILE_ABOUT_COMMENT_NAME)){
-            $comments = json_decode(Storage::disk('local')->get(self::FILE_ABOUT_COMMENT_NAME));
+        if (Storage::exists(FILE_ABOUT_COMMENT_NAME)){
+            $comments = json_decode(Storage::get(FILE_ABOUT_COMMENT_NAME));
         }
         return view('about.index', compact('comments'));
     }

@@ -5,6 +5,10 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
+/* Files for storage orders and comments of this project */
+
+require_once __DIR__ . '/../config/files.php';
+
 /*
 |--------------------------------------------------------------------------
 | Check If The Application Is Under Maintenance

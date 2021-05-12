@@ -24,7 +24,7 @@
         <x-text.title-h2>
             Добавить комментарий
         </x-text.title-h2>
-        <x-forms.about-comment />
+        <x-forms.comment-create />
     </x-content-body>
 
     <x-content-body>
