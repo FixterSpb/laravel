@@ -12,6 +12,7 @@
         <x-text.title-h2>
             Все новости
         </x-text.title-h2>
+        <x-creating-success />
         <div class="flex flex-wrap justify-around">
             @forelse($news as $newsItem)
                 <div class="w-full md:w-1/2 lg:w-1/3 px-3 mt-6">

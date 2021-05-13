@@ -30,7 +30,6 @@ class NewsController extends Controller
 
     public function store(NewsStoreRequest $request): RedirectResponse
     {
-        dd($request);
-        return redirect()->route('news.index');
+        return redirect()->route('news.index')->with('success', 'Новость успешно добавлена!');
     }
 }

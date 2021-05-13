@@ -24,6 +24,6 @@ class AboutCommentController extends Controller
         $comments[] = $commentItem;
 
         Storage::put(FILE_ABOUT_COMMENT_NAME, json_encode($comments));
-        return redirect()->route('about.index');
+        return redirect()->route('about.index')->with('success', 'Комментарий успешно добавлен!');
     }
 }

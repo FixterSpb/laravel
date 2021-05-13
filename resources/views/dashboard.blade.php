@@ -9,6 +9,7 @@
         <x-text.title-h2>
             Добро пожаловать!
         </x-text.title-h2>
+        <x-creating-success />
         <x-forms.order-create />
     </x-content-body>
 </x-app-layout>

@@ -26,6 +26,6 @@ class OrderController extends Controller
         $orders[] = $newOrder;
 
         Storage::put(FILE_ORDERS_NAME, json_encode($orders));
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('success', 'Заказ успешно добавлен!');
     }
 }
