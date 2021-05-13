@@ -1,6 +1,9 @@
 <form action="{{ route('order.store') }}" method="post" class="center">
     @csrf
     <div class="flex flex-col">
+        <div>
+            <x-auth-validation-errors :errors="$errors"/>
+        </div>
         <label for="name">Имя пользователя</label>
         <input type="text" name="name" placeholder="Введите Ваше имя">
         <br />

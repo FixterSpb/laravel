@@ -12,6 +12,6 @@
         <x-text.title-h2>
             Добавление новости
         </x-text.title-h2>
-        <x-news.news-create :categories="$categories" />
+        <x-forms.news-create :categories="$categories" />
     </x-content-body>
 </x-app-layout>

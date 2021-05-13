@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CommentStoreRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class AboutCommentController extends Controller
 {
-    public function store(Request $request): \Illuminate\Http\RedirectResponse
+    public function store(CommentStoreRequest $request): \Illuminate\Http\RedirectResponse
     {
         $commentItem = [
             'name' => $request->request->get('name'),

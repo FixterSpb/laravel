@@ -1,7 +1,10 @@
 @props(['categories'])
-<form action="{{ route('news.create') }}" method="post" class="center">
+<form action="{{ route('news.store') }}" method="post" class="center">
     @csrf
     <div class="flex flex-col">
+        <div>
+            <x-auth-validation-errors :errors="$errors"/>
+        </div>
         <label for="category">Категория новости</label>
         <select name="category" >
             <option disabled selected>Выберите категорию</option>

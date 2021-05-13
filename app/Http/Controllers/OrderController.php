@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OrderStoreRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class OrderController extends Controller
 {
 
-    public function store(Request $request): \Illuminate\Http\RedirectResponse
+    public function store(OrderStoreRequest $request): \Illuminate\Http\RedirectResponse
     {
         $newOrder = [
             'name' => $request->request->get('name'),
