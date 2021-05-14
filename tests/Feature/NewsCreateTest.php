@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class CreateNewsTest extends TestCase
+class NewsCreateTest extends TestCase
 {
     use RefreshDatabase;
     /**
