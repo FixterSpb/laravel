@@ -30,6 +30,7 @@ class CreateNewsTest extends TestCase
 
         $response->assertStatus(302);
         $response->assertSessionHas('success');
+        $response->assertRedirect('/news');
     }
 
     public function test_create_news_with_empty_category_is_invalid()
