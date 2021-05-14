@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Category;
 use Illuminate\Foundation\Http\FormRequest;
 
 class NewsStoreRequest extends FormRequest
@@ -21,10 +22,10 @@ class NewsStoreRequest extends FormRequest
      *
      * @return array
      */
-    public function rules(): array
+    public function rules(Category $category): array
     {
         return [
-            'category' => ['required'],
+            'category' => ['required', 'exists:categories,id'],
             'title' => ['required', 'string', 'min:3', 'max:50'],
             'description' => ['required', 'string', 'min:3']
         ];

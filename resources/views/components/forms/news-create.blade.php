@@ -9,7 +9,7 @@
         <select name="category" >
             <option disabled selected>Выберите категорию</option>
             @foreach($categories as $category)
-                <option value="{{ $category }}">{{ $category->title }}</option>
+                <option value="{{ $category->id }}">{{ $category->title }}</option>
             @endforeach
         </select>
         <br />
