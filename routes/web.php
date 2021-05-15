@@ -16,6 +16,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about.index');
+Route::post('/about-comment/create', [AboutCommentController::class, 'store'])->name('about-comment.store');
 
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
@@ -25,8 +26,6 @@ Route::get('/news/{news}', [NewsController::class, 'show'])->name('news.show');
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
-
-Route::post('/about-comment/create', [AboutCommentController::class, 'store'])->name('about-comment.store');
 
 Route::post('/order/create', [OrderController::class, 'store'])->name('order.store');
 

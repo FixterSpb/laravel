@@ -7,7 +7,7 @@
         <label for="name">Имя пользователя</label>
         <input type="text" name="name" placeholder="Введите Ваше имя">
         <br />
-        <label for="phone">Номер телефонв</label>
+        <label for="phone">Номер телефона</label>
         <input type="text" name="phone" placeholder="Введите Ваше имя">
         <br />
         <label for="email">Email</label>
