@@ -26,6 +26,7 @@ class NewsStoreRequest extends FormRequest
     {
         return [
             'category' => ['required', 'exists:categories,id'],
+            'source' => ['required', 'exists:sources,id'],
             'title' => ['required', 'string', 'min:3', 'max:50'],
             'description' => ['required', 'string', 'min:3']
         ];
