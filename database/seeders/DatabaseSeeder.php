@@ -34,7 +34,6 @@ class DatabaseSeeder extends Seeder
 //        }
 
         $sources = Source::factory(5)->create();
-        var_dump(count($sources));
 
         Category::factory(10)
             ->create()
@@ -45,7 +44,6 @@ class DatabaseSeeder extends Seeder
                         'source_id' => $sources[rand(0, count($sources) - 1)]->id,
                     ])
                     ->create();
-
             });
     }
 }

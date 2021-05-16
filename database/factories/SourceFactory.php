@@ -23,7 +23,7 @@ class SourceFactory extends Factory
     {
         return [
             'name' => $this->faker->text(30),
-            'URL' => $this->faker->url,
+            'url' => $this->faker->url,
         ];
     }
 }

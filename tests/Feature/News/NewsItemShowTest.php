@@ -4,6 +4,7 @@ namespace Tests\Feature\News;
 
 use App\Models\Category;
 use App\Models\News;
+use App\Models\Source;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -22,8 +23,13 @@ class NewsItemShowTest extends TestCase
         $this->actingAs($user);
 
         $category = Category::factory()->create();
+        $source = Source::factory()->create();
 
-        $news = News::factory()->create(['category_id' => $category->id]);
+        $news = News::factory()->create(
+            [
+                'category_id' => $category->id,
+                'source_id' => $source->id,
+            ]);
 
         $response = $this->get("/news/{$news->id}");
         $response->assertStatus(200);
