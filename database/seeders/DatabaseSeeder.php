@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
 //            }
 //        }
 
-        $sources = Source::factory(5)->create();
+        $sources = Source::factory(10)->create();
 
         Category::factory(10)
             ->create()
