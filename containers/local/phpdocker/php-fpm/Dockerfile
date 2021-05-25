@@ -23,6 +23,13 @@ RUN chmod 755 /usr/local/bin/start
 RUN apt-get -y install cron
 RUN apt-get update -y
 
+# Create user
+
+RUN addgroup --gid 1000 evgeniy
+#RUN useradd evgeniy
+RUN useradd --uid 1000 --gid 1000 -s /bin/bash evgeniy
+RUN su evgeniy
+
 COPY cron/crontab /etc/cron.d/crontab
 RUN crontab -u root /etc/cron.d/crontab
 RUN chmod +x /etc/cron.d/crontab
