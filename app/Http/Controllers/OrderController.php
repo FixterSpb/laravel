@@ -19,8 +19,7 @@ class OrderController extends Controller
             'description' => $request->get('description'),
         ];
 
-        $order = new Order($newOrder);
-        $order->save();
+        (new Order($newOrder))->save();
 
         return redirect()->route('dashboard')->with('success', 'Заказ успешно добавлен!');
     }
