@@ -2,10 +2,10 @@
 
 use App\Http\Controllers\AboutCommentController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\SourceController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -36,5 +36,8 @@ Route::get('/news/{news}/delete', [NewsController::class, 'destroy'])->name('new
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+
+Route::get('/admin/users', [UsersController::class, 'index'])->middleware('admin')->name('admin.users.index');
+Route::get('/admin/users/{user}/edit', [UsersController::class, 'put'])->middleware('admin')->name('admin.users.put');
 
 require __DIR__.'/auth.php';
