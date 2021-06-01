@@ -2,19 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
-use App\Models\News;
-use App\Models\Source;
+use App\Models\Order;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class NewsFactory extends Factory
+class OrderFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = News::class;
+    protected $model = Order::class;
 
     /**
      * Define the model's default state.
@@ -24,8 +22,10 @@ class NewsFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->text(30),
-            'description' => $this->faker->text(300)
+            'name' => $this->faker->name(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'phone' => '+1 (683) 739-8782',
+            'description' => $this->faker->text(300),
         ];
     }
 }
