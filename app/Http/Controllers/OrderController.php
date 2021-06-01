@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OrderPutRequest;
 use App\Http\Requests\OrderStoreRequest;
 use App\Models\Order;
 use App\Models\User;
@@ -46,9 +47,8 @@ class OrderController extends Controller
         return view('orders.create', compact('user', 'order'));
     }
 
-    public function put(Order $order, Request $request): RedirectResponse
+    public function put(Order $order, OrderPutRequest $request)
     {
-
         $order->update([
             'name' => $request->name,
             'phone' => $request->phone,

@@ -4,6 +4,10 @@
         <div>
             <x-auth-validation-errors :errors="$errors"/>
         </div>
+        @if ($comment)
+            <input type="number" name="id" class="hidden" value="{{$comment->id}}">
+        @endif
+
         <label for="name">Имя пользователя</label>
         <input
             type="text"

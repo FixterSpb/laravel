@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CommentPutRequest;
 use App\Http\Requests\CommentStoreRequest;
 use App\Models\AboutComment;
 use Illuminate\Http\Request;
@@ -29,12 +30,12 @@ class AboutCommentController extends Controller
         return redirect($request->header('referer'))->with('success', 'Комментарий удалён');
     }
 
-    public function put(AboutComment $comment, CommentStoreRequest $request)
+    public function put(AboutComment $comment, CommentPutRequest $request)
     {
         $comment->update([
             'name' => $request->get('name'),
             'description' => $request->get('description')
         ]);
-        return redirect($request->header('referer'));
+        return redirect()->route('about.index')->with('success', 'Комментарий успешно изменён');
     }
 }

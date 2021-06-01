@@ -7,7 +7,7 @@
         <div>
             <x-auth-validation-errors :errors="$errors"/>
         </div>
-        <input type="number" class="hidden" disabled value="{{ $user->id }}">
+        <input type="number" class="hidden" name="id" disabled value="{{ $user->id }}">
         <label for="name">Имя пользователя</label>
         <input type="text" name="name" placeholder="Введите Ваше имя" value="{{ $order ? $order->name : $user->name }}">
         <br />
