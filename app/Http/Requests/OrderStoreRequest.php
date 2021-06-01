@@ -3,9 +3,17 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use phpDocumentor\Reflection\Types\Boolean;
 
 class OrderStoreRequest extends FormRequest
 {
+    public $attributes = [
+        'name',
+        'phone',
+        'email',
+        'description',
+    ];
+
     /**
      * Determine if the user is authorized to make this request.
      *

@@ -34,6 +34,7 @@ class NewsController extends Controller
     {
         $news = new News([
                 'category_id' => $request->category,
+                'source_id' => $request->source,
                 'title' => $request->title,
                 'description' => $request->description,
             ]
@@ -41,5 +42,31 @@ class NewsController extends Controller
 
         $news->save();
         return redirect()->route('news.index')->with('success', 'Новость успешно добавлена!');
+    }
+
+    public function edit(News $news)
+    {
+        $categories = Category::all();
+        $sources = Source::all();
+        return view('news.create', compact('news', 'categories', 'sources'));
+    }
+
+    public function put(News $news, Request $request)
+    {
+        $news->update([
+            'category_id' => $request->category,
+            'source_id' => $request->source,
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
+
+        return redirect()->route('news.index', ['category' => $news->category])->with('success', 'Новость успешно изменена');
+    }
+
+    public function destroy(News $news, Request $request)
+    {
+        $news->delete();
+
+        return redirect()->route('news.index', ['category' => $news->category])->with('success', 'Новость успешно удалена');
     }
 }

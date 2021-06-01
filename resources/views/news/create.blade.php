@@ -10,8 +10,8 @@
 
     <x-content-body>
         <x-text.title-h2>
-            Добавление новости
+            {{ isset($news) ? 'Редактирование' : 'Создание новости' }}
         </x-text.title-h2>
-        <x-forms.news-create :categories="$categories" :sources="$sources"/>
+        <x-forms.news-create :categories="$categories" :sources="$sources" :news="$news ?? '' ?: null"/>
     </x-content-body>
 </x-app-layout>
