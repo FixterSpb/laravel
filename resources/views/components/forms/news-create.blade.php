@@ -5,6 +5,7 @@
         <div>
             <x-auth-validation-errors :errors="$errors"/>
         </div>
+        <input type="number" name="id" class="hidden" value="{{ $news ? $news->id : '' }}">
         <label for="category">Категория новости</label>
         <select name="category" >
             @if (!$news)

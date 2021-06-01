@@ -3,11 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use phpDocumentor\Reflection\Types\Boolean;
 
-class OrderStoreRequest extends FormRequest
+class NewsPutRequest extends FormRequest
 {
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -26,10 +24,11 @@ class OrderStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'string', 'min:3', 'max:50'],
-            'phone' => ['required', 'regex:/^\+?\d \(\d{3}\) \d{3}\-\d{4}$/i'],
-            'email' => ['required', 'email'],
-            'description' => ['required', 'string', 'min:3'],
+            'id' => ['exists:news,id'],
+            'category' => ['required', 'exists:categories,id'],
+            'source' => ['required', 'exists:sources,id'],
+            'title' => ['required', 'string', 'min:3', 'max:50'],
+            'description' => ['required', 'string', 'min:3']
         ];
     }
 }

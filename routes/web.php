@@ -13,11 +13,11 @@ Route::get('/', function () {
 })->name('index.index');
 
 Route::get('/orders', [OrderController::class, 'index'])->middleware(['auth'])->name('orders.index');
-Route::get('/order/create', [OrderController::class, 'create'])->name('orders.create');
-Route::post('/order/create', [OrderController::class, 'store'])->name('orders.store');
-Route::get('/order/{order}/edit', [OrderController::class, 'edit'])->name('orders.edit');
-Route::post('/order/{order}/edit', [OrderController::class, 'put'])->name('orders.put');
-Route::get('/order/{order}/delete', [OrderController::class, 'destroy'])->name('orders.destroy');
+Route::get('/order/create', [OrderController::class, 'create'])->middleware(['auth'])->name('orders.create');
+Route::post('/order/create', [OrderController::class, 'store'])->middleware(['auth'])->name('orders.store');
+Route::get('/order/{order}/edit', [OrderController::class, 'edit'])->middleware(['auth'])->name('orders.edit');
+Route::post('/order/{order}/edit', [OrderController::class, 'put'])->middleware(['auth'])->name('orders.put');
+Route::get('/order/{order}/delete', [OrderController::class, 'destroy'])->middleware(['auth'])->name('orders.destroy');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 Route::post('/about-comment/create', [AboutCommentController::class, 'store'])->name('about-comment.store');

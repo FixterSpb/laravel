@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewsPutRequest;
 use App\Http\Requests\NewsStoreRequest;
 use App\Models\Category;
 use App\Models\News;
@@ -51,7 +52,7 @@ class NewsController extends Controller
         return view('news.create', compact('news', 'categories', 'sources'));
     }
 
-    public function put(News $news, Request $request)
+    public function put(News $news, NewsPutRequest $request)
     {
         $news->update([
             'category_id' => $request->category,

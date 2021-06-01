@@ -3,11 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use phpDocumentor\Reflection\Types\Boolean;
 
-class OrderStoreRequest extends FormRequest
+class OrderPutRequest extends FormRequest
 {
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -26,6 +24,7 @@ class OrderStoreRequest extends FormRequest
     public function rules()
     {
         return [
+            'id' => ['exists:orders,id'],
             'name' => ['required', 'string', 'min:3', 'max:50'],
             'phone' => ['required', 'regex:/^\+?\d \(\d{3}\) \d{3}\-\d{4}$/i'],
             'email' => ['required', 'email'],
