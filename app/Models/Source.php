@@ -25,6 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Source whereURL($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Source whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $url
  */
 class Source extends Model
 {

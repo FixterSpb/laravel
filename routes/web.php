@@ -17,6 +17,9 @@ Route::get('/dashboard', function () {
 
 Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 Route::post('/about-comment/create', [AboutCommentController::class, 'store'])->name('about-comment.store');
+Route::get('/about-comment/edit/{comment}', [AboutCommentController::class, 'edit'])->name('about-comment.edit');
+Route::post('/about-comment/edit/{comment}', [AboutCommentController::class, 'put'])->name('about-comment.put');
+Route::get('/about-comment/delete/{comment}', [AboutCommentController::class, 'destroy'])->name('about-comment.destroy');
 
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');

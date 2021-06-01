@@ -11,6 +11,7 @@ class AboutComment extends Model
 
     protected $fillable =
         [
+            'id',
             'name',
             'description',
         ];

@@ -32,6 +32,14 @@ class NewsController extends Controller
 
     public function store(NewsStoreRequest $request): RedirectResponse
     {
+        $news = new News([
+                'category_id' => $request->category,
+                'title' => $request->title,
+                'description' => $request->description,
+            ]
+        );
+
+        $news->save();
         return redirect()->route('news.index')->with('success', 'Новость успешно добавлена!');
     }
 }

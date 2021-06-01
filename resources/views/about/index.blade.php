@@ -25,7 +25,7 @@
         <x-text.title-h2>
             Добавить комментарий
         </x-text.title-h2>
-        <x-forms.comment-create />
+        <x-forms.about-comment :comment="session()->get('comment') ?? null"/>
     </x-content-body>
 
     <x-content-body>

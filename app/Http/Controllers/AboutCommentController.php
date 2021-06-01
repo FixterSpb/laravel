@@ -17,4 +17,24 @@ class AboutCommentController extends Controller
         ]))->save();
         return redirect()->route('about.index')->with('success', 'Комментарий успешно добавлен!');
     }
+
+    public function edit(AboutComment $comment)
+    {
+        return redirect()->route('about.index')->with('comment', $comment);
+    }
+
+    public function destroy(AboutComment $comment, Request $request)
+    {
+        $comment->delete();
+        return redirect($request->header('referer'))->with('success', 'Комментарий удалён');
+    }
+
+    public function put(AboutComment $comment, CommentStoreRequest $request)
+    {
+        $comment->update([
+            'name' => $request->get('name'),
+            'description' => $request->get('description')
+        ]);
+        return redirect($request->header('referer'));
+    }
 }
