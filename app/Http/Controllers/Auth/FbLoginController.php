@@ -7,28 +7,28 @@ use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
+//use Laravel\Socialite\Contracts\Factory as Socialite;
 use Session;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-class VkLoginController extends Controller
+class FbLoginController extends Controller
 {
+
     public function redirect(): RedirectResponse
     {
-        return Socialite::driver('vkontakte')->redirect();
+        return Socialite::driver('facebook')->redirect();
     }
 
     public function callback()
     {
-
-        $vkUser = Socialite::driver('vkontakte')->user();
-
-        $user = User::whereEmail($vkUser->getEmail())->first();
+        $fbUser = Socialite::driver('facebook')->user();
+        $user = User::whereEmail($fbUser->getEmail())->first();
 
         if (!$user) {
             $user = User::create([
-                'name' => $vkUser->getName(),
-                'email' => $vkUser->getEmail(),
-                'vk_id' => $vkUser->getId(),
+                'name' => $fbUser->getName(),
+                'email' => $fbUser->getEmail(),
+                'fb_id' => $fbUser->getId(),
             ]);
         }
 

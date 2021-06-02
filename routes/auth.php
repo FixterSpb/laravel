@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
+use App\Http\Controllers\Auth\FbLoginController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
@@ -76,3 +77,9 @@ Route::get('/auth/login/vk/callback', [VkLoginController::class, 'callback'])
                 ->name('login.vk.callback');
 
 //cv%"Pyz)2a,yQFR
+
+Route::get('/auth/login/fb/redirect', [FbLoginController::class, 'redirect'])
+    ->name('login.fb.redirect');
+
+Route::get('/auth/login/fb/callback', [FbLoginController::class, 'callback'])
+    ->name('login.fb.callback');

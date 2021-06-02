@@ -36,4 +36,10 @@ return [
         'redirect' => env('VKONTAKTE_REDIRECT_URL'),
     ],
 
+    'facebook' => [
+        'client_id' => env('FACEBOOK_ID'),
+        'client_secret' => env('FACEBOOK_SECRET_KEY'),
+        'redirect' => env('FACEBOOK_REDIRECT_URL'),
+    ]
+
 ];

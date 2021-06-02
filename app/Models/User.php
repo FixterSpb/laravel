@@ -51,6 +51,8 @@ class User extends Authenticatable
         'phone',
         'password',
         'is_admin',
+        'vk_id',
+        'fb_id'
     ];
 
     /**
