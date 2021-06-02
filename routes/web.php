@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\XmlParseController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -39,5 +40,8 @@ Route::get('/categories/{category}', [CategoryController::class, 'show'])->name(
 
 Route::get('/admin/users', [UsersController::class, 'index'])->middleware('admin')->name('admin.users.index');
 Route::get('/admin/users/{user}/edit', [UsersController::class, 'put'])->middleware('admin')->name('admin.users.put');
+
+Route::get('/parser', [XmlParseController::class, 'index'])->name('xml.parser.index');
+Route::get('/news/yandex/{theme}', [\App\Http\Controllers\XmlParseYandexNewsController::class, 'index'])->name('yandex.news');
 
 require __DIR__.'/auth.php';

@@ -11,6 +11,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
+        "orchestra/parser": "^6.1",
         "socialiteproviders/vkontakte": "^4.2"
     },
     "require-dev": {

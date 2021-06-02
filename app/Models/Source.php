@@ -26,11 +26,15 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Source whereUpdatedAt($value)
  * @mixin \Eloquent
  * @property string $url
- * @method static \Illuminate\Database\Eloquent\Builder|Source whereUrl($value)
  */
 class Source extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'url',
+    ];
 
     public function news()
     {
