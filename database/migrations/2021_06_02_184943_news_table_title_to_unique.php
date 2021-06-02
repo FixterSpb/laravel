@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UsersTableAddFieldIdAdmin extends Migration
+class NewsTableTitleToUnique extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class UsersTableAddFieldIdAdmin extends Migration
      */
     public function up()
     {
-        Schema::table('users', function(Blueprint $table) {
-            $table->boolean('is_admin')->default(true);
+        Schema::table('news', function (Blueprint $table) {
+            $table->string('title')->unique('idx_news_title')->change();
         });
     }
 
@@ -25,8 +25,8 @@ class UsersTableAddFieldIdAdmin extends Migration
      */
     public function down()
     {
-        Schema::table('users', function(Blueprint $table) {
-            $table->dropColumn('is_admin');
+        Schema::table('news', function (Blueprint $table) {
+            $table->dropIndex('idx_news_title');
         });
     }
 }

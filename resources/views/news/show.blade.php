@@ -7,12 +7,22 @@
         <x-text.title-h1>
             {{ __('Новости') }}
         </x-text.title-h1>
+        <x-buttons.button class="bg-yellow-500 mx-1" href="{{ route('yandex.news', ['theme' => 'movies']) }}">
+            Яндекс Кино
+        </x-buttons.button>
+        <x-buttons.button class="bg-yellow-500 mx-1" href="{{ route('yandex.news', ['theme' => 'army']) }}">
+            Яндекс Армия
+        </x-buttons.button>
+        <x-buttons.button class="bg-yellow-500 mx-1" href="{{ route('yandex.news', ['theme' => 'sport']) }}">
+            Яндекс Спорт
+        </x-buttons.button>
     </x-slot>
 
     <x-content-body>
         <x-text.title-h2>
             {{ $news->title }}
         </x-text.title-h2>
+        <x-creating-success />
         <div class="">
             <p>{{ $news->description }}</p>
 

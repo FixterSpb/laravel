@@ -4,11 +4,15 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
+use App\Http\Controllers\Auth\FbLoginController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Auth\VkLoginController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
@@ -62,3 +66,20 @@ Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+
+/*
+ * VK
+ */
+Route::get('/auth/login/vk/redirect', [VkLoginController::class, 'redirect'])
+                ->name('login.vk.redirect');
+
+Route::get('/auth/login/vk/callback', [VkLoginController::class, 'callback'])
+                ->name('login.vk.callback');
+
+//cv%"Pyz)2a,yQFR
+
+Route::get('/auth/login/fb/redirect', [FbLoginController::class, 'redirect'])
+    ->name('login.fb.redirect');
+
+Route::get('/auth/login/fb/callback', [FbLoginController::class, 'callback'])
+    ->name('login.fb.callback');
